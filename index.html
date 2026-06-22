@@ -1,93 +1,233 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu blog tech</title>
+    <title>Meu Blog Tech</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset básico */
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
+            box-sizing: border-box;
         }
 
-        header {
-            background-color: #1a3a5f; /* Azul escuro */
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        header p {
-            margin-top: 10px;
-            font-size: 1.1em;
-            font-weight: 300;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 20px auto;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             padding: 20px;
         }
 
-        img {
-            display: block;
-            max-width: 100px; 
-            width: 100%;       
-            height: auto;
-            margin: 20px 0;    
-            border-radius: 8px; 
+        /* Cabeçalho */
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
         }
 
-        .img-placeholder {
-            font-style: italic;
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 30px;
-            line-height: 1.4;
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Main - container dos artigos */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Cada artigo (post) */
+        article {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: transform 0.2s;
+        }
+
+        article:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Imagem do post */
+        article img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Conteúdo do post (div) */
+        article div {
+            flex: 1;
         }
 
         article h2 {
-            color: #1a3a5f;
-            font-size: 1.8em;
+            color: #1e3a5f;
+            font-size: 1.5rem;
             margin-bottom: 5px;
         }
 
-        .author {
-            font-weight: bold;
-            margin-bottom: 20px;
+        .artigo-autor {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-style: italic;
         }
 
-        .content {
+        article p {
+            color: #333;
             line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Botões de reação */
+        button {
+            background-color: #e8f0fe;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #d0e0ff;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button span {
+            font-weight: bold;
+            min-width: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* Botão coração */
+        button:first-of-type {
+            color: #d32f2f;
+        }
+
+        button:first-of-type:hover {
+            background-color: #ffebee;
+        }
+
+        /* Botão joinha */
+        button:last-of-type {
+            color: #1565c0;
+        }
+
+        button:last-of-type:hover {
+            background-color: #e3f2fd;
+        }
+
+        /* Responsivo */
+        @media (max-width: 700px) {
+            article {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            article img {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+
+            article div {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Meu blog tech</h1>
+        <h1>📘 Meu Blog Tech</h1>
         <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
     </header>
 
     <main>
-        <!-- A imagem foi movida para dentro do main e corrigida aqui embaixo -->
-        <img src="imagem.jpg" alt="Ilustração sobre tecnologia">
-
+        <!-- PRIMEIRO POST -->
         <article>
-            <h2>Meu primeiro post</h2>
-            <p class="author">Por: Egon henrique</p>
-            <p class="content">
-                Bem vindo ao meu novo blog! Aqui vou mostrar dicas de programação e curiosidades da área de tecnologia.
-            </p>
+            <img src="img/logo.jpg"
+                 alt="Logotipo conceitual de tecnologia em formato de hexagono, cores em tons de azul marinho.">
+
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Egon henrique</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- SEGUNDO POST -->
+        <article>
+            <img src="img/logo.jpg"                 
+                alt="Logotipo conceitual de tecnologia em formato de hexagono, cores em tons de azul marinho.">
+
+            <div>
+                <h2>JavaScript: dicas essenciais</h2>
+                <p class="artigo-autor">Por: Egon Henrique</p>
+                <p>Neste post vou compartilhar algumas dicas de python que vão facilitar seu dia a dia como desenvolvedor.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
         </article>
     </main>
 
+    <script>
+        // Seleciona todos os botões da página
+        const botoes = document.querySelectorAll('button');
+
+        // Para cada botão, adiciona a lógica de like/unlike
+        botoes.forEach(function (botao) {
+            let curtiu = false; // Controla se o botão já foi curtido
+
+            botao.addEventListener('click', function () {
+                // Encontra o span dentro do botão clicado
+                const contador = botao.querySelector('span');
+
+                if (curtiu === false) {
+                    // Primeiro clique: aumenta o contador
+                    contador.textContent = parseInt(contador.textContent) + 1;
+                    curtiu = true;
+                    // Feedback visual: muda cor de fundo
+                    botao.style.backgroundColor = '#bbdefb';
+                } else {
+                    // Segundo clique: diminui o contador (desfaz curtida)
+                    contador.textContent = parseInt(contador.textContent) - 1;
+                    curtiu = false;
+                    // Volta à cor original
+                    botao.style.backgroundColor = '#e8f0fe';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
